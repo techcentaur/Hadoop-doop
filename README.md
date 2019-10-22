@@ -22,22 +22,22 @@ Here I will summarize the paper of HDFS, because it's really cool, and pin down 
 > HDFS has a master/slave architecture.
 
 HDFS Cluster Entities: piece of softwares, typically GNU/Linux OS
-	- Single NameNode: a master server:
-		- Arbitrator and repository for all HDFS metadata.
-		- User data doesn't flow through here.
-		- Make all decisions regarding replication of blocks
-		- It periodically recieves _Heartbeat_ and _Blockreport_ from every DataNode in the cluster
-			- _Heartbeat_ => DataNode is functioning properly
-			- _Blockreport_ => List of all active blocks on a DataNode
-		- Manages a file system namespace and regulates access to files by clients
-		- Executes file operations like opening, closing, and renaming files and directories.
-		- Determines the mapping of blocks to DataNodes.
-		- Replication factor (replicas of a file) can be specified by client and is stored here (at NameNode)
-	- Multiple DataNodes: slave servers (usually per node)
-		- Manage storage attached to system where they run
-		- A file is split in one or more blocks, and these blocks are stored at DataNodes.
-		- DataNodes also perform block creation, deletion, and replication upon instructions from NameNode.
-		- Responsible for serving read and write requests from the file system's client.
+- Single NameNode: a master server:
+	- Arbitrator and repository for all HDFS metadata.
+	- User data doesn't flow through here.
+	- Make all decisions regarding replication of blocks
+	- It periodically recieves _Heartbeat_ and _Blockreport_ from every DataNode in the cluster
+		- _Heartbeat_ => DataNode is functioning properly
+		- _Blockreport_ => List of all active blocks on a DataNode
+	- Manages a file system namespace and regulates access to files by clients
+	- Executes file operations like opening, closing, and renaming files and directories.
+	- Determines the mapping of blocks to DataNodes.
+	- Replication factor (replicas of a file) can be specified by client and is stored here (at NameNode)
+- Multiple DataNodes: slave servers (usually per node)
+	- Manage storage attached to system where they run
+	- A file is split in one or more blocks, and these blocks are stored at DataNodes.
+	- DataNodes also perform block creation, deletion, and replication upon instructions from NameNode.
+	- Responsible for serving read and write requests from the file system's client.
 
 Notes:
 	- Multiple instances of DataNode can run on one machine, but rarely the case in real deployment.
