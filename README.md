@@ -48,8 +48,23 @@ Notes:
 - `block_size` and `replication_factor` are configurable; at creation time or later.
 - HDFS are write-once and have strictly one write at at time.
 
-#### 4.1 Replica Placement
+**NOTE**
+I guess I've written most of the important things about it. If you want to get ever deeper, look out in the architecture guide [here](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html) or lookout in the paper [here](https://storageconference.us/2010/Papers/MSST/Shvachko.pdf).
 
-#### 4.2 Replica Selection
 
-#### 4.3 Replica Safemode
+## Deployement on the Multi-Node Cluster
+
+Here's how I did it: [instructions]()
+
+## Issues
+
+Did you find anything wrong? Raise an issue, I'll attempt to solve it, or if you've solved it on your own, then raise a PR.
+
+## Anything Related to Systems
+
+Drop a mail at ankit03june AT gmail DOT com, I'll be in touch.
+
+
+
+
+
